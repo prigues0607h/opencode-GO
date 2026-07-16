@@ -335,6 +335,69 @@ a {
   height: 20px;
   fill: currentColor;
 }
+/* Nav group (collapsible section) */
+.nav-group .nav-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: var(--muted);
+  transition: all 0.2s;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.nav-group .nav-group-toggle:hover {
+  color: var(--text);
+  background: rgba(99, 102, 241, 0.1);
+}
+.nav-group .nav-group-toggle .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.nav-group .nav-group-toggle .icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.nav-group .nav-group-toggle .arrow {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+.nav-group .nav-group-toggle .arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.nav-group .nav-group-toggle.open .arrow {
+  transform: rotate(90deg);
+}
+.nav-group .sub-nav {
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+.nav-group .sub-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 10px 50px;
+  color: var(--muted);
+  transition: all 0.2s;
+  font-size: 13px;
+  cursor: pointer;
+}
+.nav-group .sub-nav a:hover,
+.nav-group .sub-nav a.active {
+  color: var(--text);
+  background: rgba(99, 102, 241, 0.08);
+  border-right: 3px solid var(--accent);
+}
 .main {
   flex: 1;
   padding: 30px;
