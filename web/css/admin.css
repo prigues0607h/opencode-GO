@@ -369,10 +369,12 @@ a {
   transform: rotate(90deg);
 }
 .nav-group .sub-nav {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 .nav-group.open .sub-nav {
-  display: block;
+  max-height: 500px;
 }
 .nav-group .sub-nav a {
   display: flex;

@@ -152,7 +152,7 @@
                 <span class="icon" v-html="icons.usage"></span><span>{{t('nav.usage')}}</span>
               </a>
               <div class="nav-group" :class="{open: channelOpen}">
-                <button class="nav-group-toggle" @click="toggleChannel">
+                <button type="button" class="nav-group-toggle" @click="toggleChannel" :aria-expanded="channelOpen">
                   <span>{{t('nav.channel')}}</span>
                   <span class="arrow" v-html="icons.chevron"></span>
                 </button>

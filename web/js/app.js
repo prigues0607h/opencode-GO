@@ -282,7 +282,7 @@ createApp({
     function openPage(nextPage) {
       if (nextPage !== "keys") keys.stopQuotaTicker();
       page.value = nextPage;
-      if (nextPage === "keys") channelOpen.value = true;
+      if (channels.some(ch => ch.page === nextPage)) channelOpen.value = true;
       if (nextPage === "dashboard") dashboard.load();
       else if (nextPage === "ops") ops.load();
       else if (nextPage === "usage") usage.load();
