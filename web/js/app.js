@@ -30,6 +30,9 @@ createApp({
     const dropLang = ref(false);
     const dropTheme = ref(false);
     const channelOpen = ref(false);
+    const channels = reactive([
+      { id: 'opencode', page: 'keys', labelKey: 'nav.opencode' },
+    ]);
 
     // 版本与更新检查
     const appVersion = ref("");
@@ -290,7 +293,6 @@ createApp({
     }
     function toggleChannel() {
       channelOpen.value = !channelOpen.value;
-      if (channelOpen.value) openPage("keys");
     }
 
     // ─── 暴露给模板 ───────────────────────────────────
@@ -306,6 +308,7 @@ createApp({
       dropLang,
       dropTheme,
       channelOpen,
+      channels,
       appVersion,
       githubUrl,
       latestVersion,

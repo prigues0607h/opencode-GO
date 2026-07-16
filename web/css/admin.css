@@ -354,16 +354,6 @@ a {
   color: var(--text);
   background: rgba(99, 102, 241, 0.1);
 }
-.nav-group .nav-group-toggle .icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-.nav-group .nav-group-toggle .icon svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
 .nav-group .nav-group-toggle .arrow {
   margin-left: auto;
   width: 16px;
@@ -375,18 +365,19 @@ a {
   height: 16px;
   fill: currentColor;
 }
-.nav-group .nav-group-toggle.open .arrow {
+.nav-group.open .nav-group-toggle .arrow {
   transform: rotate(90deg);
 }
 .nav-group .sub-nav {
-  overflow: hidden;
-  transition: max-height 0.25s ease;
+  display: none;
+}
+.nav-group.open .sub-nav {
+  display: block;
 }
 .nav-group .sub-nav a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px 10px 50px;
+  padding: 10px 20px 10px calc(20px + var(--nav-indent, 30px));
   color: var(--muted);
   transition: all 0.2s;
   font-size: 13px;

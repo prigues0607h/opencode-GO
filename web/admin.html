@@ -151,14 +151,15 @@
               <a :class="{active:page==='usage'}" @click="openPage('usage')">
                 <span class="icon" v-html="icons.usage"></span><span>{{t('nav.usage')}}</span>
               </a>
-              <div class="nav-group">
-                <button class="nav-group-toggle" :class="{open: channelOpen}" @click="toggleChannel">
-                  <span class="icon" v-html="icons.channel"></span>
+              <div class="nav-group" :class="{open: channelOpen}">
+                <button class="nav-group-toggle" @click="toggleChannel">
                   <span>{{t('nav.channel')}}</span>
                   <span class="arrow" v-html="icons.chevron"></span>
                 </button>
-                <div class="sub-nav" :style="{ maxHeight: channelOpen ? '50px' : '0' }">
-                  <a :class="{active:page==='keys'}" @click="openPage('keys')">{{t('nav.opencode')}}</a>
+                <div class="sub-nav">
+                  <a v-for="ch in channels" :key="ch.id"
+                     :class="{active:page===ch.page}"
+                     @click="openPage(ch.page)">{{t(ch.labelKey)}}</a>
                 </div>
               </div>
               <a :class="{active:page==='tokens'}" @click="openPage('tokens')">
